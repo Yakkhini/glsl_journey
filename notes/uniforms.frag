@@ -20,5 +20,5 @@ uniform float u_time; // the time (seconds)
 
 void main() {
     vec2 st = gl_FragCoord.xy/u_resolution;
-    gl_FragColor = vec4(1.9 * st.x, abs(st.x + sin(3.0 * sin(0.1 * u_time * st.y) * u_time)), 0.8, 1.0);
+    gl_FragColor = vec4(1.9 * st.x, abs(0.9 * sin(st.x / (st.y + sin(u_time) + 0.1) * u_mouse.y)), 0.7, 1.0);
 }
